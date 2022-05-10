@@ -3622,17 +3622,15 @@ html {
 					margin-right: auto;
 
 				}
-				
 				.intro {
-					display: flex;
-					justify-content: center;
-					height: 800px;
+					max-height: 70vh;
 				}
-				  
-				.intro img {
-					width: 60%;
-					height: 500px;
-				}			
+				.intro img{
+					border-radius: 50%;
+					width: 100%;
+					margin: auto;
+					display: block;
+				}		
 
 				#wrapper > section > header {
 					background-attachment: fixed;
