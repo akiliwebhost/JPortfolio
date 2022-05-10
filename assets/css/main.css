@@ -33,6 +33,13 @@ body {
 	line-height: 1;
 }
 
+#home__img {
+	position: relative;
+	border-radius: 50%;
+	left: -250px;
+}
+
+
 .footer__social{
     font-size: 1.4rem;
     margin-right: .5rem;
