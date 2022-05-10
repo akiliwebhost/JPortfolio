@@ -33,11 +33,6 @@ body {
 	line-height: 1;
 }
 
-#home__img {
-	position: relative;
-	border-radius: 50%;
-	left: -250px;
-}
 
 
 .footer__social{
@@ -48,7 +43,7 @@ body {
     color: #49fcd4;
 }
 .about__img{
-    justify-content: center;
+	justify-content: center;
     padding-top: 1rem;
     padding-left: 1rem;
     width: 120px;
@@ -62,7 +57,7 @@ body {
 	height: 100vh;
 }
 .about__img img{
-    width: 100px;
+	width: 100px;
 }
 html::-webkit-scrollbar{
 	width: 0.5rem;
@@ -169,6 +164,8 @@ html {
 		html {
 			font-size: 13pt;
 		}
+
+		
 		
 	}
 	
@@ -3910,6 +3907,7 @@ html {
 			transform: none;
 		}
 		
+		
 	}
 	
 	body.is-ie #wrapper section {
@@ -3941,5 +3939,9 @@ html {
 		body.is-ie #wrapper section > footer {
 			padding: 4rem;
 		}
+
+		
 		
 	}
+
+
