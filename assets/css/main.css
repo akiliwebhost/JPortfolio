@@ -33,15 +33,6 @@ body {
 	line-height: 1;
 }
 
-
-
-.footer__social{
-    font-size: 1.4rem;
-    margin-right: .5rem;
-}
-.footer__social:hover{
-    color: #49fcd4;
-}
 .about__img{
 	justify-content: center;
     padding-top: 1rem;
@@ -53,8 +44,25 @@ body {
     overflow: hidden;
 	margin-left: 330px;
 }
-.intro header {
-	height: 100vh;
+@media screen and (min-width: 1920px) {
+	#home__img {
+		border-radius: 50%;
+		position: relative;
+		left: 100px;
+		bottom: 150px;
+	}
+	#contact {
+		position: relative;
+		bottom: 500px;
+	}
+
+	.footer__social{
+		font-size: 1rem;
+		margin-right: .5rem;
+	}
+	.footer__social:hover{
+		color: #43d9b8;
+	}
 }
 .about__img img{
 	width: 100px;
