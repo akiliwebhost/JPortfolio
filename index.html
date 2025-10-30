@@ -8,6 +8,22 @@
 <link rel="stylesheet" href="style2.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  function get_action(form) 
+{
+    var v = grecaptcha.getResponse();
+    if(v.length == 0)
+    {
+        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+        return false;
+    }
+    else
+    {
+         document.getElementById('captcha').innerHTML="Captcha completed";
+        return true; 
+    }
+}
+</script>
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -172,6 +188,7 @@ html::-webkit-scrollbar-thumb{
         </div>
         <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
         <div class="g-recaptcha" data-sitekey="6Lf4q_wrAAAAADln9lLWA5cKzCzWfbeid31C6PtY"></div>
+        <span id="captcha" style="color:red" /></span>
         <button class="w3-button w3-black w3-right w3-section" type="submit">
           <i class="fa fa-paper-plane"></i> SEND 
         </button>
