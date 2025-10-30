@@ -8,22 +8,7 @@
 <link rel="stylesheet" href="style2.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script>
-  function get_action(form) 
-{
-    var v = grecaptcha.getResponse();
-    if(v.length == 0)
-    {
-        document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-        return false;
-    }
-    else
-    {
-         document.getElementById('captcha').innerHTML="Captcha completed";
-        return true; 
-    }
-}
-</script>
+
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
 body, html {
@@ -234,6 +219,23 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+</script>
+
+<script>
+  function get_action(form) 
+  {
+      var v = grecaptcha.getResponse();
+      if(v.length == 0)
+      {
+          document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
+          return false;
+      }
+      else
+      {
+           document.getElementById('captcha').innerHTML="Captcha completed";
+          return true; 
+      }
+  }
 </script>
 
 </body>
