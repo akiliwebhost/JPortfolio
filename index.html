@@ -159,7 +159,7 @@ html::-webkit-scrollbar-thumb{
       <div class="w3-large w3-margin-bottom">
         <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: info@varandassociates.com<br>
       </div>
-      <form action="https://formsubmit.co/info@varandassociates.com" method="POST">
+      <form action="https://formsubmit.co/info@varandassociates.com" method="POST" onsubmit="return validateForm()">
         
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="https://akiliwebhost.github.io/JPortfolio/thanks.html">
@@ -172,8 +172,8 @@ html::-webkit-scrollbar-thumb{
           </div>
         </div>
         <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-        <div class="g-recaptcha" id="rcaptcha"  data-sitekey="6Lf4q_wrAAAAADln9lLWA5cKzCzWfbeid31C6PtY"></div>
-        <span id="captcha" style="color:red" /></span>
+        <div class="g-recaptcha" data-sitekey="6Lf4q_wrAAAAADln9lLWA5cKzCzWfbeid31C6PtY"></div>
+        <div id="captcha-error" style="color: red;"></div>
         <button class="w3-button w3-black w3-right w3-section" type="submit">
           <i class="fa fa-paper-plane"></i> SEND 
         </button>
@@ -224,20 +224,18 @@ function toggleFunction() {
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
-  function get_action(form) 
-  {
-      var v = grecaptcha.getResponse();
-      if(v.length == 0)
-      {
-          document.getElementById('captcha').innerHTML="You can't leave Captcha Code empty";
-          return false;
-      }
-      else
-      {
-           document.getElementById('captcha').innerHTML="Captcha completed";
-          return true; 
-      }
-  }
+  function validateForm() {
+        var captchaResponse = grecaptcha.getResponse();
+        var captchaErrorDiv = document.getElementById('captcha-error');
+
+        if (captchaResponse.length === 0) {
+            captchaErrorDiv.textContent = "Please complete the CAPTCHA to submit the form.";
+            return false;
+        } else {
+            captchaErrorDiv.textContent = "";
+            return true;
+        }
+    }
 </script>
 
 </body>
